@@ -1,9 +1,8 @@
-html:root{
-    --navigation-background : #7289da;
-    
+html:root {
+    --navigation-background: #7289da;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     font-size: 10px;

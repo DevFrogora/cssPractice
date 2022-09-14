@@ -1,11 +1,7 @@
-
-
-
-    export const  LoadFileToText = async (filepath) => {
-
-        const csstext = await fetch(filepath).then((data) => data.text());
-        return csstext;
-    };
+export const LoadFileToText = async (filepath) => {
+    const csstext = await fetch(filepath).then((data) => data.text());
+    return csstext;
+};
 
 
     // // create new link tag

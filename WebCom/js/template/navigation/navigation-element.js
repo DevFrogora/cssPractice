@@ -1,4 +1,4 @@
-import {LoadFileToText} from "../../modules/Loader.js";
+import { LoadFileToText } from "../../modules/Loader.js";
 
 let navTemplate = await LoadFileToText("/js/template/navigation/navigation-template.html");
 const template = document.createElement('template');
@@ -23,7 +23,6 @@ const routes = {
 const handleLocation = async () => {
     const path = window.location.pathname;
     const route = routes[path] || routes[404];
-    console.log(route);
     const html = await fetch(route).then((data) => data.text());
     document.getElementById("main-page").innerHTML = html;
 };
@@ -32,11 +31,9 @@ window.onpopstate = handleLocation;
 window.route = route;
 handleLocation();
 
-
 class Navigation extends HTMLElement {
     constructor() {
         super();
-        console.log("constructor")
     }
 
     OnSlotItemClicked(e) {
@@ -45,22 +42,16 @@ class Navigation extends HTMLElement {
 
     connectedCallback() {
         this.attachShadow({ mode: "open" });
-        
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         // this.shadowRoot.querySelector('span').innerHTML = this.getAttribute('name');
         this.shadowRoot.querySelector('img').
             addEventListener('click', (e) => this.OnSlotItemClicked(e.target));
-
         this.shadowRoot.querySelector('slot').
             addEventListener('click', (e) => this.OnSlotItemClicked(e.target));
-
-        console.log("connectedCallback")
     }
 
     disconnectedCallback() {
-        console.log("disconnectedCallback")
     }
-
 }
 
 
