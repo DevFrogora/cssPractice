@@ -1,57 +1,8 @@
+import {LoadFileToText} from "../modules/Loader.js";
+
+let navTemplate = await LoadFileToText("/js/template/navigation/navigation-template.html");
 const template = document.createElement('template');
-template.innerHTML = `
-<style>
-
-.navigation-element {
-    display :flex;
-    flex-direction:row;
-    width:100%;
-    height:7rem;
-    align-items: center;
-    background-color: var(--navigation-background);
-}
-
-.navigation-element .navigation-logo {
-   display:flex;
-   flex-direction:row;
-   flex-basis:60%;
-   padding:0;
-   margin :0;
-   max-height:100%;
-}
-
-.navigation-element ul{
-    padding:0;
-    margin :0;
-    list-style: none;
-    display : flex;
-    flex-direction:row;
-    flex-basis:40%;
-    justify-content: space-evenly;
-}
-
-.navigation-element .navigation-logo img{ 
-    padding:0;
-    margin :0;
-    max-width:25%; 
-    max-height:100%;
-}
-
-</style>
-
-
-<div class="navigation-element">
-        <div class="navigation-logo">
-            <img src="images/logo.png"  customPath="/" />
-        </div>
-        <ul>
-            <slot name="item">
-
-            </slot>
-        </ul>
-</div>
-`;
-{/* <span> <slot name="item"> </span> */ }
+template.innerHTML = navTemplate;
 
 const route = (event) => {
     event = event || window.event;
@@ -79,9 +30,7 @@ const handleLocation = async () => {
 
 window.onpopstate = handleLocation;
 window.route = route;
-
 handleLocation();
-
 
 
 class Navigation extends HTMLElement {
@@ -96,6 +45,7 @@ class Navigation extends HTMLElement {
 
     connectedCallback() {
         this.attachShadow({ mode: "open" });
+        
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         // this.shadowRoot.querySelector('span').innerHTML = this.getAttribute('name');
         this.shadowRoot.querySelector('img').
@@ -112,7 +62,6 @@ class Navigation extends HTMLElement {
     }
 
 }
-
 
 
 window.customElements.define('navigation-menu', Navigation);
