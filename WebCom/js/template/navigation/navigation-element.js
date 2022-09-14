@@ -1,4 +1,4 @@
-import {LoadFileToText} from "../modules/Loader.js";
+import {LoadFileToText} from "../../modules/Loader.js";
 
 let navTemplate = await LoadFileToText("/js/template/navigation/navigation-template.html");
 const template = document.createElement('template');
