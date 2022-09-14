@@ -1,0 +1,51 @@
+body{
+    padding: 0;
+    margin: 0 ;
+    
+}
+
+header {
+    display: none;
+    width: calc(100% - 4px);
+    font-size: 3rem;
+    height: 6vh;
+    border: 2px solid red;
+}
+
+/* style="width: 98vw; height: 4vh; border:2px solid red;" */
+section {
+    font-size: 1.5rem;
+    width: calc(100% - 4px);
+    height: 6vh;
+}
+
+/* style="width: 98vw; height: 6vh; " */
+
+nav {
+    font-size: 1.5rem;
+    width: 20%; height: 3vh;
+    border: 2px solid red;
+    float: left;
+    /* display: inline-block; */
+    margin-top: 1vh;
+    margin-left: 1vw;
+    /* margin-bottom: 1vh; */
+}
+
+/* style="width: 30vw; height: 3vh; border:2px solid red; float: left; margin-top: 1vh; margin-left: 1vw;" */
+footer {
+    /* minus the width of the border */
+    width: calc(100% - 4px);
+    height: 4vh;
+    border: 2px solid red;
+    margin-top: 1vh;
+}
+
+html{
+    font-size: 10px;
+}
+
+*{
+    
+    /* box-sizing: border-box */
+}

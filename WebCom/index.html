@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title> Home Page</title>
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        navigation-menu li {
+            color: white;
+            font-size: 2.1rem;
+        }
+    </style>
+    <script src="js/template/navigation-element.js"></script>
+
+</head>
+
+<body>
+    <navigation-menu parentPath="">
+        <!-- <li slot="item" customPath="/">Home</li> -->
+        <li slot="item" customPath="/project"> Project</li>
+        <li slot="item" customPath="/experience"> Experience</li>
+        <li slot="item" customPath="/contact"> Contact</li>
+        <li slot="item" customPath="/about"> About</li>
+    </navigation-menu>
+    <div id="main-page">
+
+    </div>
+</body>
+
+</html>
