@@ -72,6 +72,13 @@
     box-shadow: 0.1rem 0.1rem 8px black;
 }
 
+/* .navigation-element .theme-container button .dropdown 
+{
+    display: none;
+} */
+
+
+
 .navigation-element .theme-container button .dropdown-container .dropdown div
 {
     padding: 0.2rem;

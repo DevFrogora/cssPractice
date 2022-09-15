@@ -1,5 +1,7 @@
 import { LoadFileToText } from "../../modules/Loader.js";
 
+import "./theme-dropdown.js";
+
 let navTemplate = await LoadFileToText("/js/template/navigation/navigation-template.html");
 const template = document.createElement('template');
 template.innerHTML = navTemplate;
@@ -41,6 +43,7 @@ class Navigation extends HTMLElement {
     }
 
     connectedCallback() {
+        let toggleTheme=false;
         this.attachShadow({ mode: "open" });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         // this.shadowRoot.querySelector('span').innerHTML = this.getAttribute('name');
@@ -48,6 +51,20 @@ class Navigation extends HTMLElement {
             addEventListener('click', (e) => this.OnSlotItemClicked(e.target));
         this.shadowRoot.querySelector('slot').
             addEventListener('click', (e) => this.OnSlotItemClicked(e.target));
+
+        let button = this.shadowRoot.querySelector(".navigation-element .theme-container button");
+        button.addEventListener('click', (e) => {
+            if(toggleTheme == false)
+            {
+                button.querySelector(".dropdown").style.display="none";
+                toggleTheme = true;
+            }else{
+                button.querySelector(".dropdown").style.display="flex";
+                toggleTheme = false;
+            }
+
+        });
+
     }
 
     disconnectedCallback() {
