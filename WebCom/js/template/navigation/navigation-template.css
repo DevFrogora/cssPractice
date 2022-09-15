@@ -78,7 +78,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-color: #f0f0f0;
+    background-color: var(--theme-light-dropdown-bg-color );
     box-sizing: border-box;
 
 }
@@ -94,7 +94,7 @@
 
 .navigation-element .theme-container button .dropdown-container .dropdown div .option:hover
 {
-    background-color: #bdbcbc;
+    background-color: var(--theme-light-dropdown-hover-bg-color);
 }
 
 .navigation-element .theme-container button .dropdown-container .dropdown div .option img{

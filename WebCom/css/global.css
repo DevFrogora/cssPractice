@@ -7,6 +7,10 @@ html:root {
     --theme-dark-bg-color: #121212;
     --theme-dark-text-color: #45ADFE;
 
+    --theme-light-dropdown-bg-color :#f0f0f0;
+    --theme-light-dropdown-hover-bg-color :#bdbcbc;
+
+
 }
 
 :root {
