@@ -5,6 +5,9 @@ html:root {
 * {
     padding: 0;
     margin: 0;
-    font-size: 10px;
     font-family: Verdana;
+}
+
+body{
+    font-size: 10px;
 }
