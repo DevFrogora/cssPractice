@@ -10,7 +10,7 @@
 .navigation-element .navigation-logo {
     display: flex;
     flex-direction: row;
-    flex-basis: 60%;
+    flex-basis: 40%;
     padding: 0;
     margin: 0;
     max-height: 100%;
@@ -29,6 +29,31 @@
     list-style: none;
     display: flex;
     flex-direction: row;
-    flex-basis: 40%;
+    flex-basis: 30%;
     justify-content: space-evenly;
 }
+
+.navigation-element .theme-container{
+    
+    display: flex;
+    flex-direction: row;
+    flex-basis: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation-element .theme-container button{
+
+    /* padding: 0.7rem 1.6rem;
+    border: none; */
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 20%;
+}
+
+.navigation-element .theme-container button svg{
+    width: 1rem;
+    height: 1rem;
+}
+

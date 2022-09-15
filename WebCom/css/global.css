@@ -1,13 +1,27 @@
 html:root {
     --navigation-background: #7289da;
+
+    /* Theme */
+    --theme-light-bg-color: #fff;
+    --theme-light-text-color: #123;
+    --theme-dark-bg-color: #121212;
+    --theme-dark-text-color: #45ADFE;
+
+}
+
+:root {
+    background-color: var(--theme-light-bg-color);
+    color: var(--theme-light-text-color);
 }
 
 * {
     padding: 0;
     margin: 0;
-    font-family: Verdana;
 }
 
-body{
+body {
     font-size: 10px;
+    font-family: Verdana;
+    background-color: var(--theme-light-bg-color);
+    color: var(--theme-light-text-color);
 }
