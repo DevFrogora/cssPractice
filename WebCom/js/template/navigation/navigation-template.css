@@ -46,14 +46,46 @@
 
     /* padding: 0.7rem 1.6rem;
     border: none; */
+    width :5rem;
+    padding: 0;
+    margin: 0;
     cursor: pointer;
     display: flex;
     flex-direction: row;
-    flex-basis: 20%;
+    justify-content: space-evenly;
+
+    position: relative;
+
 }
 
-.navigation-element .theme-container button svg{
+.navigation-element .theme-container button img{
     width: 1rem;
     height: 1rem;
 }
 
+.navigation-element .theme-container button .dropdown-container .dropdown
+{
+    position: absolute;
+    top : 1.5rem;
+    left:0;
+    width :5rem;
+}
+
+.navigation-element .theme-container button .dropdown-container .dropdown div
+{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.navigation-element .theme-container button .dropdown-container .dropdown div .option
+{
+    padding: 0.2rem;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+
+}
