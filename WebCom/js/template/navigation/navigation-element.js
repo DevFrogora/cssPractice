@@ -1,6 +1,5 @@
 import { LoadFileToText } from "../../modules/Loader.js";
 
-import "./theme-dropdown.js";
 
 let navTemplate = await LoadFileToText("/js/template/navigation/navigation-template.html");
 const template = document.createElement('template');
@@ -56,10 +55,10 @@ class Navigation extends HTMLElement {
         button.addEventListener('click', (e) => {
             if(toggleTheme == false)
             {
-                button.querySelector(".dropdown").style.display="none";
+                button.querySelector(".dropdown div").style.display="none";
                 toggleTheme = true;
             }else{
-                button.querySelector(".dropdown").style.display="flex";
+                button.querySelector(".dropdown div").style.display="flex";
                 toggleTheme = false;
             }
 
