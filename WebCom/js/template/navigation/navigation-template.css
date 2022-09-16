@@ -4,7 +4,7 @@
     width: 100%;
     height: 7rem;
     align-items: center;
-    background-color: var(--navigation-background);
+    /* background-color: var(--navigation-background); */
 }
 
 .navigation-element .navigation-logo {
@@ -21,6 +21,7 @@
     margin: 0;
     max-width: 25%;
     max-height: 100%;
+    filter: var(--invert-filter);
 }
 
 .navigation-element ul {
@@ -56,11 +57,16 @@
 
     position: relative;
 
+    background-color: inherit;
+    color: inherit;
+    border: 0;
+
 }
 
-.navigation-element .theme-container button img{
+.navigation-element .theme-container button .dropdown-icon{
     width: 1rem;
     height: 1rem;
+    filter: var(--invert-filter);
 }
 
 .navigation-element .theme-container button .dropdown-container .dropdown
@@ -69,7 +75,7 @@
     top : 1.5rem;
     left:0;
     width :6rem;
-    box-shadow: 0.1rem 0.1rem 8px black;
+    box-shadow: 0.1rem 0.1rem 8px var(--text-color);
 }
 
 /* .navigation-element .theme-container button .dropdown 
@@ -78,14 +84,13 @@
 } */
 
 
-
 .navigation-element .theme-container button .dropdown-container .dropdown div
 {
     padding: 0.2rem;
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-color: var(--theme-light-dropdown-bg-color );
+    background-color: var(--theme-dropdown-bg-color);
     box-sizing: border-box;
 
 }
@@ -101,16 +106,26 @@
 
 .navigation-element .theme-container button .dropdown-container .dropdown div .option:hover
 {
-    background-color: var(--theme-light-dropdown-hover-bg-color);
+    background-color: var(--theme-dropdown-hover-bg-color );
 }
 
-.navigation-element .theme-container button .dropdown-container .dropdown div .option img{
+/* .navigation-element .theme-container button .dropdown-container .dropdown div .option img{
     width: 0.7rem;
     height: 0.7rem;
+    fill: var(--theme-dropdown-icon-bg-color);
+} */
+
+.navigation-element .theme-container button .dropdown-container .dropdown div .option .icon{
+    width: 0.7rem;
+    height: 0.7rem;
+    filter: var(--invert-filter);
 }
 
-.navigation-element .theme-container button .dropdown-container .dropdown div .option span{
+
+
+.navigation-element .theme-container button .dropdown-container .dropdown div .option .text{
     font-size: 0.7rem;
     padding-left: 0.3rem;
     box-sizing: border-box;
+    color: var(--text-color );
 }
