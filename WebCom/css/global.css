@@ -8,6 +8,7 @@ html:root {
     --theme-dark-text-color: #f0f0f0;
 
     --theme-dark-dropdown-hover-bg-color :#000000;
+    --theme-light-dropdown-hover-bg-color :#d3d2d2;
 
 }
 
@@ -37,9 +38,9 @@ body {
         /* for shadow element */
         --text-color : var(--theme-dark-text-color);
         --background-color : var(--theme-dark-bg-color);
+        --invert-filter: invert(1);
 
         --theme-dropdown-bg-color : var(--theme-dark-bg-color);
-        --theme-dropdown-icon-bg-color: invert(1);
         --theme-dropdown-hover-bg-color : var(--theme-dark-dropdown-hover-bg-color);
 
     }
@@ -48,18 +49,42 @@ body {
 @media( prefers-color-scheme: light )
 {
     html:root{
-        color: var(--theme-dark-text-color);
-        background-color: var(--theme-dark-bg-color);
+        color: var(--theme-light-text-color);
+        background-color: var(--theme-light-bg-color);
         
         /* for shadow element */
-        --text-color : var(--theme-dark-text-color);
-        --background-color : var(--theme-dark-bg-color);
-        --invert-filter: invert(1);
+        --text-color : var(--theme-light-text-color);
+        --background-color : var(--theme-light-bg-color);
+        --invert-filter: invert(0);
 
-        --theme-dropdown-bg-color : var(--theme-dark-bg-color);
-        
-        --theme-dropdown-hover-bg-color : var(--theme-dark-dropdown-hover-bg-color);
-
+        --theme-dropdown-bg-color : var(--theme-light-bg-color);
+        --theme-dropdown-hover-bg-color : var(--theme-light-dropdown-hover-bg-color);
 
     }
+}
+
+html[data-theme='dark']{
+    color: var(--theme-dark-text-color);
+    background-color: var(--theme-dark-bg-color);
+    
+    /* for shadow element */
+    --text-color : var(--theme-dark-text-color);
+    --background-color : var(--theme-dark-bg-color);
+    --invert-filter: invert(1);
+
+    --theme-dropdown-bg-color : var(--theme-dark-bg-color);
+    --theme-dropdown-hover-bg-color : var(--theme-dark-dropdown-hover-bg-color);
+}
+
+html[data-theme='light']{
+    color: var(--theme-light-text-color);
+    background-color: var(--theme-light-bg-color);
+    
+    /* for shadow element */
+    --text-color : var(--theme-light-text-color);
+    --background-color : var(--theme-light-bg-color);
+    --invert-filter: invert(0);
+
+    --theme-dropdown-bg-color : var(--theme-light-bg-color);
+    --theme-dropdown-hover-bg-color : var(--theme-light-dropdown-hover-bg-color);
 }

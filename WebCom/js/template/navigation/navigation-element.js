@@ -42,7 +42,7 @@ class Navigation extends HTMLElement {
     }
 
     connectedCallback() {
-        let toggleTheme=false;
+        let toggleTheme = false;
         this.attachShadow({ mode: "open" });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         // this.shadowRoot.querySelector('span').innerHTML = this.getAttribute('name');
@@ -51,18 +51,59 @@ class Navigation extends HTMLElement {
         this.shadowRoot.querySelector('slot').
             addEventListener('click', (e) => this.OnSlotItemClicked(e.target));
 
-        let button = this.shadowRoot.querySelector(".navigation-element .theme-container button");
+        let button = this.shadowRoot.querySelector(".navigation-element .theme-container .btn");
         button.addEventListener('click', (e) => {
-            if(toggleTheme == false)
-            {
-                button.querySelector(".dropdown div").style.display="none";
+            e.stopPropagation();
+            if (toggleTheme == false) {
+                button.querySelector(".dropdown div").style.display = "none";
                 toggleTheme = true;
-            }else{
-                button.querySelector(".dropdown div").style.display="flex";
+            } else {
+                button.querySelector(".dropdown div").style.display = "flex";
                 toggleTheme = false;
             }
 
         });
+        let dropdown = this.shadowRoot.querySelectorAll(".navigation-element .theme-container button .dropdown-container .dropdown .option");
+        dropdown.forEach(elem => elem.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // console.log("child", e.currentTarget.getAttribute("data-name"));
+            let themeSelected = e.currentTarget.getAttribute("data-name");
+            switch (themeSelected) {
+                case "OS":
+
+                    document.querySelector("html").setAttribute("data-theme", "auto");
+                    button.querySelector(".dropdown div").style.display = "none";
+                    toggleTheme = true;
+                    break;
+                case "Light":
+                    document.querySelector("html").setAttribute("data-theme", "light");
+                    button.querySelector(".dropdown div").style.display = "none";
+                    toggleTheme = true;
+                    break;
+                case "Dark":
+                    document.querySelector("html").setAttribute("data-theme", "dark");
+                    button.querySelector(".dropdown div").style.display = "none";
+                    toggleTheme = true;
+                    break;
+
+                default:
+                    break;
+            }
+            // e.target.getAttribute("src");
+
+        }));
+
+        document.addEventListener("click", (event) => {
+            // this.shadowRoot.querySelector(".navigation-element .theme-container button .dropdown-container .dropdown .option").contains();
+
+                let isClickInside = button.querySelector(".dropdown div").contains(event.target);
+
+                if (!isClickInside) {
+                    button.querySelector(".dropdown div").style.display = "none";
+                    toggleTheme = true;
+                }
+          });
+
 
     }
 
